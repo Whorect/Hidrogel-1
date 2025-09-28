@@ -5,8 +5,11 @@
   --color-primary: #f67280;
   --color-primary-content: #101828;
   --color-complementary: #355c7d;
+
+  /* Default = desktop */
   --background-image-noise:
     linear-gradient(to bottom, rgba(53,92,125,0.8), rgba(0,0,0,0.95)),
+    url('/images/bg-desktop.jpg'),
     url('/images/noise.png');
 }
 
@@ -68,7 +71,7 @@
   }
 
   .btn-lg {
-    @apply px-6 py-4 text-lg; /* ganti var jadi tailwind langsung */
+    @apply px-6 py-4 text-lg;
   }
 }
 
@@ -78,4 +81,24 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: white;
+}
+
+/* 📱 Kalau device portrait → pakai gambar mobile */
+@media (orientation: portrait) {
+  body {
+    --background-image-noise:
+      linear-gradient(to bottom, rgba(53,92,125,0.8), rgba(0,0,0,0.95)),
+      url('/images/bg-mobile.jpg'),
+      url('/images/noise.png');
+  }
+}
+
+/* 💻 Kalau layar ≥ 1024px → pakai gambar desktop */
+@media (min-width: 1024px) {
+  body {
+    --background-image-noise:
+      linear-gradient(to bottom, rgba(53,92,125,0.8), rgba(0,0,0,0.95)),
+      url('/images/bg-desktop.jpg'),
+      url('/images/noise.png');
+  }
 }
