@@ -1,21 +1,76 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-Inovasi terkuat sejagat raya, bisa memusnahkan seluruh mahluk jahanam.
-
-Inovasi terkuat ini tidak hanya memusnahkan mahluk jahanam, tapi sampai bisa memusnahkan [raja iblis](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaLQMA6ODdlorDXMZ87mo5rVTHklR-9_38xQ&s) dan [sadboy tingkat dewa](https://i.scdn.co/image/ab67616d0000b2737e638435b9596886d5a02f9d)
-`;
+import Navbar from "../components/Navbar.astro";
 ---
 
-<Layout title="This is Natriplast.">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">Natriplast: dij iwjal deo</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-<div class="flex flex-col gap-4 mt-8">
-<a href="https://social.mtdv.me/watch?v=natriplast-essay" class="btn btn-lg">Download Essay Natriplast</a>
-<a href="https://social.mtdv.me/watch?v=natriplast-essay" class="btn btn-lg">Download Aplikasi Natriplast</a>
-</div>
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Natriplast</title>
+  </head>
+  <body class="font-sans">
+    <!-- ✅ Navbar sticky -->
+    <Navbar />
+
+    <!-- ✅ Home Section -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center px-4">
+      <h1 class="text-4xl font-bold mb-4">Natriplast: Inovasi Masa Depan</h1>
+      <p class="text-lg max-w-2xl text-center mb-8">
+        Inovasi ramah lingkungan untuk kesehatan dan kehidupan yang lebih baik.
+      </p>
+      <div class="space-y-4">
+        <a
+          href="https://social.mtdv.me/watch?v=natriplast-essay"
+          class="block w-72 text-center bg-rose-500 text-white font-semibold py-3 rounded-lg hover:bg-rose-600 transition"
+        >
+          Download Essay Natriplast
+        </a>
+        <a
+          href="https://social.mtdv.me/watch?v=natriplast-essay"
+          class="block w-72 text-center bg-rose-500 text-white font-semibold py-3 rounded-lg hover:bg-rose-600 transition"
+        >
+          Download Aplikasi Natriplast
+        </a>
+      </div>
+    </section>
+
+    <!-- ✅ Info Section -->
+    <section id="info" class="min-h-screen flex items-center justify-center bg-gray-100">
+      <div class="max-w-3xl text-center">
+        <h2 class="text-3xl font-bold mb-4">Info Terkait</h2>
+        <p class="text-lg text-gray-600">
+          Informasi mengenai bahan dasar, proses, dan manfaat inovasi hidrogel ini.
+        </p>
+      </div>
+    </section>
+
+    <!-- ✅ Statistik Section -->
+    <section id="statistik" class="min-h-screen flex items-center justify-center">
+      <div class="max-w-3xl text-center">
+        <h2 class="text-3xl font-bold mb-4">Statistik</h2>
+        <p class="text-lg text-gray-600">Data pendukung hasil riset dan uji coba produk.</p>
+      </div>
+    </section>
+
+    <!-- ✅ Tips Section -->
+    <section id="tips" class="min-h-screen flex items-center justify-center bg-gray-100">
+      <div class="max-w-3xl text-center">
+        <h2 class="text-3xl font-bold mb-4">Tips Kesehatan</h2>
+        <p class="text-lg text-gray-600">Tips praktis menjaga kesehatan terkait penggunaan produk ini.</p>
+      </div>
+    </section>
+
+    <!-- ✅ About Section -->
+    <section id="about" class="min-h-screen flex items-center justify-center">
+      <div class="max-w-3xl text-center">
+        <h2 class="text-3xl font-bold mb-4">About Us</h2>
+        <p class="text-lg text-gray-600">Tim pengembang dan tujuan dari inovasi ini.</p>
+      </div>
+    </section>
+  </body>
+</html>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
