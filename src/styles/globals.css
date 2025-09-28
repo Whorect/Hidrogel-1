@@ -54,7 +54,6 @@
     }
 
     .btn {
-.btn {
   @apply inline-flex items-center justify-center gap-2 
     bg-primary text-primary-content cursor-pointer 
     text-center font-semibold no-underline transition-all;
