@@ -54,14 +54,21 @@
     }
 
     .btn {
-        @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center font-semibold no-underline transition-colors;
-        padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
-        font-size: var(--btn-font-size, 0.875rem);
-        border-radius: var(--btn-border-radius, 0.25rem);
+.btn {
+  @apply inline-flex items-center justify-center gap-2 
+    bg-primary text-primary-content cursor-pointer 
+    text-center font-semibold no-underline transition-all;
 
-        &:hover {
-            @apply bg-primary/85;
-        }
+  padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
+  font-size: var(--btn-font-size, 0.875rem);
+  border-radius: var(--btn-border-radius, 0.5rem); /* lebih bulat */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25); /* shadow */
+
+  &:hover {
+    @apply bg-primary/85;
+    transform: translateY(-2px); /* hover naik dikit */
+  }
+}
 
         &:disabled {
             @apply text-gray-400 bg-gray-700;
