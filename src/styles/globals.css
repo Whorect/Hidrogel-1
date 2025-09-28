@@ -78,3 +78,10 @@
         --btn-py: 1.125rem;
     }
 }
+body {
+  background: var(--background-image-noise);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white; /* biar text kontras */
+}
