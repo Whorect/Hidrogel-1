@@ -20,26 +20,16 @@ Silahkan Download Aplikasinya disini:
 const exampleTag = tags[randomInt(0, tags.length - 1)];
 ---
 
-<Layout title="Revalidation">
+<Layout title="Download Aplikasi">
     <h1 class="mb-10">Revalidating Server Content</h1>
     <Markdown content={explainer} class="mb-10" />
     <div class="flex flex-wrap gap-4">
-        <button class="revalidate-button btn" data-tag={exampleTag}>Invalidate tag: {exampleTag}</button>
-        <button class="btn" onclick="location.reload()">Reload page</button>
+<a href="/aplikasi.apk" download>
+  <button class="btn">Download Aplikasi</button>
+</a>
     </div>
 </Layout>
 
-<script>
-    function revalidate(tag: string) {
-        fetch('/api/revalidate', {
-            method: 'POST',
-            body: JSON.stringify({ tags: [tag] }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        alert(`Invalidated tag: ${tag}`);
-    }
 
     const revalidateButton = document.querySelectorAll('button.revalidate-button')[0];
     revalidateButton.addEventListener('click', (e) => {
