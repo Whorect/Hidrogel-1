@@ -1,89 +1,81 @@
 @import 'tailwindcss';
 
 @theme {
-    --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-primary: #f67280;
-    --color-primary-content: #101828;
-    --color-complementary: #355c7d;
---background-image-noise:
-  linear-gradient(to bottom, rgba(53,92,125,0.8), rgba(0,0,0,0.95)),
-  url('/images/noise.png');
-
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --color-primary: #f67280;
+  --color-primary-content: #101828;
+  --color-complementary: #355c7d;
+  --background-image-noise:
+    linear-gradient(to bottom, rgba(53,92,125,0.8), rgba(0,0,0,0.95)),
+    url('/images/noise.png');
 }
 
 @layer base {
-    h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl;
-    }
+  h1 {
+    @apply text-4xl font-bold tracking-tight sm:text-5xl;
+  }
 
-    h2 {
-        @apply text-2xl font-bold sm:text-3xl;
-    }
+  h2 {
+    @apply text-2xl font-bold sm:text-3xl;
+  }
 
-    a:not(.btn) {
-        @apply underline transition hover:opacity-80;
-    }
+  a:not(.btn) {
+    @apply underline transition hover:opacity-80;
+  }
 
-    pre {
-        @apply p-6 overflow-x-auto rounded-lg;
-    }
+  pre {
+    @apply p-6 overflow-x-auto rounded-lg;
+  }
 
-    :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-gray-900 text-primary;
-        font-size: 0.9em;
-    }
-}
-
-@layer components {
-    .markdown {
-        > * {
-            @apply my-6;
-        }
-
-        :where(h1, h2) {
-            @apply mt-12 mb-6;
-        }
-
-        > :first-child {
-            @apply mt-0;
-        }
-
-        > :last-child {
-            @apply mb-0;
-        }
-    }
-
-    .btn {
-  @apply inline-flex items-center justify-center gap-2 
-    bg-primary text-primary-content cursor-pointer 
-    text-center font-semibold no-underline transition-all;
-
-  padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
-  font-size: var(--btn-font-size, 0.875rem);
-  border-radius: var(--btn-border-radius, 0.5rem); /* lebih bulat */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25); /* shadow */
-
-  &:hover {
-    @apply bg-primary/85;
-    transform: translateY(-2px); /* hover naik dikit */
+  :not(pre) > code {
+    @apply px-1 py-0.5 font-mono rounded bg-gray-900 text-primary;
+    font-size: 0.9em;
   }
 }
 
-        &:disabled {
-            @apply text-gray-400 bg-gray-700;
-        }
+@layer components {
+  .markdown {
+    > * {
+      @apply my-6;
     }
 
-    .btn-lg {
-        --btn-font-size: 1.125rem;
-        --btn-px: 1.5rem;
-        --btn-py: 1.125rem;
+    :where(h1, h2) {
+      @apply mt-12 mb-6;
     }
+
+    > :first-child {
+      @apply mt-0;
+    }
+
+    > :last-child {
+      @apply mb-0;
+    }
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 
+      bg-primary text-primary-content cursor-pointer 
+      text-center font-semibold no-underline transition-all 
+      px-5 py-3 text-base rounded-lg shadow-md;
+
+    &:hover {
+      @apply bg-primary/85 -translate-y-0.5;
+    }
+
+    &:disabled {
+      @apply text-gray-400 bg-gray-700;
+    }
+  }
+
+  .btn-lg {
+    @apply px-6 py-4 text-lg; /* ganti var jadi tailwind langsung */
+  }
 }
+
 body {
   background: var(--background-image-noise);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: white; /* biar text kontras */
+  color: white;
 }
